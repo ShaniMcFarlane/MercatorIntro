@@ -93,6 +93,7 @@ object MondayCodeAlong extends App {
   class Dog(val name: String, val age: Int, val likesTreats: Boolean) {
     def speak: String = "woof" // declared in advance --> same for every dog!
   }
+
   //  use VAL in parameters to make them accessible outside of class
   //  use class to make objects (e.g. Dog)
   //  Object of type dog
@@ -101,6 +102,108 @@ object MondayCodeAlong extends App {
   println(crumble.speak)
   println(crumble.name)
   println(crumble.age)
-  println(crumble.likesTreats)
+  //  println(crumble.likesTreats)
+
+  //  Afternoon Task
+  //    --> Question 1
+  val one: Boolean = 3 + 4 * 57 < 300
+  println(one)
+
+  val two: Boolean = 144 / 12 >= 12
+  println(two)
+
+  val three: Boolean = "Cat" < "Dog"
+  println(three)
+  //  compare strings lexicographically (like in a dictionary) c (67) comes before d (68) --> string comparisons are done character by character
+
+  val four: Boolean = "Rabbit" < "Hamster"
+  println(four)
+
+  def five(num: Int): Boolean = {
+    num % 2 != 0
+  }
+
+  println(five(17))
+
+  val six: Boolean = 75 / 9 < 30 && 89 / 6 < 20
+  println(six)
+
+  //   --> Question 2
+  val stringOne: String = "I love scala already"
+  println("I love scala already")
+  //  printLn prints the string to the terminal | the var just stores the string
+
+  //   --> Question 3
+  def squareMethod(num: Int): Int = {
+    num * num
+  }
+
+  println(squareMethod(5))
+
+  //  --> Question 4
+  def oddNum(num: Int): Boolean = {
+    num % 2 != 0
+  }
+
+  println(oddNum(5))
+
+  //  --> Question 5
+  class Book(val Title: String, val Author: String, val Year: Int, val Genre: String) {
+    def isLong(pages: Int): Boolean = {
+      pages >= 500
+    }
+  }
+
+  val bookOne = new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925, "Fiction")
+  println(bookOne.isLong(180))
+
+  //  Extension
+  //  --> Question 1
+  val lowToUpperCase: String = "hello world!".toUpperCase
+  println(lowToUpperCase)
+
+  //   --> Question 2
+  val firstLetterUpperCase: String = "hello world!".capitalize
+  println(firstLetterUpperCase)
+
+  //  --> Question 3
+  val sOne: String = "STRING"
+  val sTwo: String = "string"
+
+  println(sOne == sTwo) // Returns false --> ASCII numbers are different for lowercase and uppercase characters / Scala is case-sensitive
+
+  // --> Question 4
+  //  no, one is a string --> there is no simple conversion
+  //  .toInt only works on strings that contain numerical values
+
+  // --> Question 5
+  //  val toString: String = (1).toString
+  //  println(toString)
+  //  cant convert 1.toString gives you "1"
+
+  // --> Question 6
+  val convertInt: Int = 1
+  val converted = convertInt.toString
+  println(converted)
+  println(converted).getClass
+  // Bit confused with this one?
+
+  //  Research
+
+  // --> Question 1
+  //  val new: String = "Hello World!"
+  //  println(new)
+  //  illegal start of simple pattern --> Error --> new is a keyword so it cant be used as a variable name
+
+  // --> Question 2
+  val `new`: String = "Hello World!"
+  println(new)
+  // use backticks to help it compile
+  // other words that cannot be used --> class, def, object, else, if, var, val
+
+  // Question 3
+  // Case Classes --> Simple data containers - Book/Dog/User ect
+  // Classes --> Behavioural control - inheritance or mutability
+  // need more explanation
 
 }
