@@ -148,7 +148,8 @@ object MondayCodeAlong extends App {
   println(oddNum(5))
 
   //  --> Question 5
-  class Book(val Title: String, val Author: String, val Year: Int, val Genre: String) {
+  // Class Name -> Capitalise / class parameter names lowercase
+  class Book(val title: String, val author: String, val year: Int, val genre: String) {
     def isLong(pages: Int): Boolean = {
       pages >= 500
     }
@@ -185,7 +186,7 @@ object MondayCodeAlong extends App {
   val convertInt: Int = 1
   val converted = convertInt.toString
   println(converted)
-  println(converted).getClass
+  println(converted.getClass)
   // Bit confused with this one?
 
   //  Research
@@ -200,6 +201,7 @@ object MondayCodeAlong extends App {
   println(`new`)
   // use backticks to help it compile
   // other words that cannot be used --> class, def, object, else, if, var, val
+  //  Best practice to NOT use them
 
   // Question 3
   // Case Classes --> Simple data containers - Book/Dog/User ect
