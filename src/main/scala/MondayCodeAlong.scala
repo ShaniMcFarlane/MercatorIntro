@@ -197,7 +197,7 @@ object MondayCodeAlong extends App {
 
   // --> Question 2
   val `new`: String = "Hello World!"
-  println(new)
+  println(`new`)
   // use backticks to help it compile
   // other words that cannot be used --> class, def, object, else, if, var, val
 
