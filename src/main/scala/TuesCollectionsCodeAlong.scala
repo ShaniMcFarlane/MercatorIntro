@@ -76,29 +76,34 @@ object TuesCollectionsCodeAlong extends App {
     number => number * 3
     // _ * 3 - this is the same
   }
+
   println("Tripled Set:" + tripledSet(setOne))
 
   def tripledSeq(inputSeq: Seq[Int]): Seq[Int] = inputSeq.map {
     number => number * 3
     // _ * 3 - this is the same
   }
+
   println("Tripled Seq:" + tripledSeq(seqOne))
 
   def tripledMap(inputMap: Map[String, Int]): Map[String, Int] = inputMap.map {
     case (key, value) => (key, value * 3)
   }
+
   println("Tripled Map: " + tripledMap(mapOne))
 
   // Task 4,5,6
   def addOne(inputSeq: Seq[Int]): Seq[Int] = inputSeq.map {
     number => number + 1
   }
-   println("Add one: " + addOne(seqOne))
+
+  println("Add one: " + addOne(seqOne))
 
   def letterR(inputSeq: Seq[String]): Seq[Boolean] = nameSeq.map {
     _.contains("r")
     // name => name.contains('r')
   }
+
   println("Letter R: " + letterR(nameSeq))
 
   def oddNum = setOne.filter {
@@ -108,7 +113,7 @@ object TuesCollectionsCodeAlong extends App {
   }
 
   // Append / Prepend
-  val newSeq: Seq[Int] = Seq(6,7,8,9)
+  val newSeq: Seq[Int] = Seq(6, 7, 8, 9)
   // Append to end
   val appenedListOne = seqOne :+ newSeq
   println("Append :+ " + appenedListOne)
@@ -126,5 +131,40 @@ object TuesCollectionsCodeAlong extends App {
   val prependedValue = 9 +: seqOne
   println(prependedValue)
 
+
+  // Afternoon task
+
+  // 1)
+  val forenameSeq: Seq[String] = Seq("Shani", "Bruna", "April", "Shantel", "Ajan", "Bruna", "Shantel")
+  println("Q1: " + forenameSeq)
+
+  //  2)
+  println(s"Q2: This is a sequence of forenames using interpolation $forenameSeq")
+
+  //  3)
+  def forenameMethod(inputSeq: Seq[String], name: String): Int = {
+    inputSeq.count(n => n == name)
+  }
+  println("Q3: " + forenameMethod(forenameSeq, "Bruna"))
+
+  //  4
+  println(s"Q4: Shani has submitted their tax return ${forenameMethod(forenameSeq, "Shani")} time")
+
+  // 5
+  val toSetMethod = forenameSeq.toSet
+  println("Q5: " + toSetMethod)
+
+  // 6
+  println(s"Q6: $toSetMethod have submitted their tax returns")
+
+  // 7
+  def refactoredMethod(inputCollection: Iterable[String], name: String): Int = {
+    inputCollection.count(n => n == name)
+  }
+  println("Q7: " + refactoredMethod(forenameSeq, "Shantel"))
+
+  // 8
+  println("Q8: SEQ = " + refactoredMethod(forenameSeq, "Shantel"))
+  println("Q8: SET = " + refactoredMethod(toSetMethod, "Shantel"))
 
 }
