@@ -87,7 +87,85 @@ object WedsCodeAlong extends App {
     case error: NumberFormatException => println(s"$error is not a valid input") // error seen as e
   }
 
+  // Afternoon Task
+  //  1)
+  //  A)
+  val watermelons: Int = 4
+  println("A: " + watermelons)
 
+  //  B/C)
+  if (watermelons > 5) {
+    println(s"B: John has $watermelons, this is too many watermelons to carry!")
+  } else if (watermelons <= 5 && watermelons >= 4) {
+    println(s"B: John has $watermelons watermelons, he needs one bag!")
+  } else if (watermelons <= 3 && watermelons >= 1) {
+    println(s"B: John doesn't need a bag, hes only got $watermelons watermelons")
+  } else {
+    println("B: Please enter a valid number of watermelons!")
+  }
+
+
+  //  D
+  val johnsBag: Boolean = false
+  println("D: " + johnsBag)
+
+
+  // E
+  if (watermelons > 5 || watermelons == 5 && johnsBag == false) {
+    println(s"E: John cant carry $watermelons watermelons, they're too heavy!")
+  } else if (watermelons == 5 && johnsBag == true) {
+    println(s"E: John has $watermelons watermelons, he only needs one bag")
+  } else if (watermelons <= 3 && watermelons >= 1) {
+    println(s"E: John has $watermelons watermelons, so he doesnt need a bag")
+  } else if (watermelons <= 0) {
+    println("E: Johns not buying watermelons today")
+  } else {
+    println("E: Does john have a bag?")
+  }
+
+  // Probably a much shorter way to do this lol
+
+  // 2)
+
+  try {
+    val miles = "twenty".toInt
+
+    def milesPaid(miles: Int): Double = {
+      miles * 0.45
+    }
+
+    println(s"You are owed ${milesPaid(miles)}")
+  } catch {
+    case e: NumberFormatException => println(s"$e is not a valid input")
+  }
+
+  //  Extension
+  //  1) -> Can be found on stack overflow/google/scala docs/geeks for geeks
+  //  https://www.geeksforgeeks.org/operators-precedence-in-scala/
+  //  ORDER OF PRECEDENCE --> from google ai
+  //  Operators starting with *, /, % (multiplication, division, modulo)
+  //  Operators starting with +, - (addition, subtraction)
+  //  Operators starting with :, =, ! (colon, equals, not)
+  //  Operators starting with <, >, = (less than, greater than, equals)
+  //  Operators starting with &, ^, | (and, exclusive or, or)
+  //  Operators starting with any letter, $, or _ (this includes the logical && and || operators)
+  //  Using parentheses () to group expressions can override the default precedence
+
+  //  If the left hand side of an && statement is FALSE, the whole statement is false and the right hand side will not be executed
+  //  If the left hand side of || statement is TRUE, the right hand side won't execute because the whole statement is true
+  //  NOT (!) is first / AND (&&) second /OR (||) last
+
+  //  2) true
+  val calc2 = (true || false && false)
+  println("2: " + calc2)
+
+  //  3) false
+  val calc3 = ((true || false) && false)
+  println("3: " + calc3)
+
+  //  4) true ?
+  val calc4 = (1 < 4 && 7 != 10 || 9 + 10 == 21)
+  println("4: " + calc4)
 
 
 }
