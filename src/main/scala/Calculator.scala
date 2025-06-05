@@ -10,6 +10,6 @@ class Calculator {
 
   def divide(x:Int, y:Int): Int = x / y
 
-
+// comment
 
 }
