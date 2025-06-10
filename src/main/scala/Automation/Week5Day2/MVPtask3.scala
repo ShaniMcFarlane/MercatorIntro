@@ -52,6 +52,19 @@ object MVPtask3 extends App {
 
 //  Thread.sleep(3000)
 
-  driver.quit()
+  driver.close()
 
 }
+
+// Research
+
+// What is the difference between .close() and .quit() in different scenarios?
+//   close() -- > closes a single window and keeps the session active.
+//   quit() --> closes all windows and ends the session completely.
+
+// How does Selenium handle multiple browser windows?
+// -> Investigate getWindowHandles() and how to switch between windows.
+// ---> window handles are unique IDs for windows or tabs, used to switch between/manage the tabs/windows
+//      --> there are no duplicate IDs
+// --> getWindowHandles() to get all the handles of the currently opened windows.
+// --> switchTo().window(handle) to switch to a specific window, where handle is one of the strings from the set returned by getWindowHandles()

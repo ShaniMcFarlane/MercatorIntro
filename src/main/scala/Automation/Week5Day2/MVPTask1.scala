@@ -23,6 +23,6 @@ object MVPtask1 extends App {
   val currentURL = driver.getCurrentUrl
   println(currentURL)
 
-  driver.close()
+  driver.quit()
 
 }
