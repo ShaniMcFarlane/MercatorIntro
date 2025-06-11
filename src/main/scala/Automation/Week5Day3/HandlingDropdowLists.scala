@@ -12,7 +12,9 @@ object HandlingDropdowLists extends App {
 
   driver.get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select")
 
+  // Switching to frame
   driver.switchTo().frame("iframeResult")
+
   val dropdown = driver.findElement(By.name("cars"))
 
   val select = new Select(dropdown)
@@ -25,7 +27,6 @@ object HandlingDropdowLists extends App {
 
   select.selectByIndex(3)
   println("Selected index: " + select.getFirstSelectedOption.getText)
-
 
   driver.quit()
 
