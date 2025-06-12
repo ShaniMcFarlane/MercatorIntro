@@ -33,6 +33,7 @@ object HandlingWindows extends App {
       // ...SWITCH to the new window
       driver.switchTo().window(handle)
       println("The current window: " + handle)
+      println("Page Title: " + driver.getTitle)
       // as long as the handle is not the parent window, it will keep switching
       // In this case there is only one switch. It doesn't go back to the parent. It stops at the end of the list
     }
