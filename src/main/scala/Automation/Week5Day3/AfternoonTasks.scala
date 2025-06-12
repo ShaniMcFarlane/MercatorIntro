@@ -78,6 +78,7 @@ object AfternoonTasks extends App {
   driver.findElement(By.linkText("Index")).click()
   println("Returned to index page")
 
-//  driver.quit()
+  //  driver.quit()
+  //
 
 }
