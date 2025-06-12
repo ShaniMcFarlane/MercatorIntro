@@ -20,6 +20,8 @@ object MVPtask1 extends App {
   val pageTitle = driver.getTitle
   println(pageTitle)
 
+  // println(driver.getTitle) --> faster way of writing it
+
   val currentURL = driver.getCurrentUrl
   println(currentURL)
 

@@ -31,6 +31,7 @@ object MVPtask2 extends App {
 
   println(driver.getPageSource.take(100))
 
+  driver.close()
   driver.quit()
 
 }
