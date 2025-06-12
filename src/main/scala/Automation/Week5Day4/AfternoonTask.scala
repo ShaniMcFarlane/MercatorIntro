@@ -38,10 +38,21 @@ object AfternoonTask extends App {
 
   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10))
 
-  val explicitWait = new WebDriverWait(driver, Duration.ofMinutes(1))
+  val explicitWait = new WebDriverWait(driver, Duration.ofSeconds(5))
 
-  val visibleCountry = explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"countries\"]/tbody/tr[85]/td[2]/strong")))
-  println("Jamaica")
+  val jamaicaRow = explicitWait.until(
+    ExpectedConditions.visibilityOfElementLocated(
+      By.xpath("//table[@id='countries']//tr[td/strong[text()='Jamaica']]")
+    )
+  )
+
+  val cells2 = jamaicaRow.findElements(By.tagName("td"))
+  val capital = cells2.get(2).getText
+  val currency = cells2.get(3).getText
+
+  println("Country: Jamaica")
+  println(s"Capital: $capital")
+  println(s"Currency: $currency")
 
 
   driver.quit()
