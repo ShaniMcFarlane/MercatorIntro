@@ -40,11 +40,7 @@ object AfternoonTask extends App {
 
   val explicitWait = new WebDriverWait(driver, Duration.ofSeconds(5))
 
-  val jamaicaRow = explicitWait.until(
-    ExpectedConditions.visibilityOfElementLocated(
-      By.xpath("//table[@id='countries']//tr[td/strong[text()='Jamaica']]")
-    )
-  )
+  val jamaicaRow = explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='countries']//tr[td/strong[text()='Jamaica']]")))
 
   val cells2 = jamaicaRow.findElements(By.tagName("td"))
   val capital = cells2.get(2).getText
@@ -53,7 +49,6 @@ object AfternoonTask extends App {
   println("Country: Jamaica")
   println(s"Capital: $capital")
   println(s"Currency: $currency")
-
 
   driver.quit()
 
