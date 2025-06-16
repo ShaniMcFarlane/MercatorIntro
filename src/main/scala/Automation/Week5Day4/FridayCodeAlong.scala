@@ -99,7 +99,6 @@ object FridayCodeAlong extends App {
   // Row 0: Apple | Red
   // Row 1: Banana | Yellow
   // Row 2: Kiwi | Green
-
   // Does a value exist?
 
   val doesBananaExist = rows.asScala.exists{ row =>
