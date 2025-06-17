@@ -65,19 +65,19 @@ object FridayCodeAlong extends App {
     }
   }
 
-  // Tables
-
-  <table>
-    <tr>
-      <td>Apple</td> <td>Red</td>
-    </tr>
-    <tr>
-      <td>Banana</td> <td>Yellow</td>
-    </tr>
-    <tr>
-      <td>Kiwi</td> <td>Green</td>
-    </tr>
-  </table>
+//  // Tables
+//
+//  <table>
+//    <tr>
+//      <td>Apple</td> <td>Red</td>
+//    </tr>
+//    <tr>
+//      <td>Banana</td> <td>Yellow</td>
+//    </tr>
+//    <tr>
+//      <td>Kiwi</td> <td>Green</td>
+//    </tr>
+//  </table>
 
   // Looping through table rows
   val rows = driver.findElements(By.tagName("tr")) // Found a collection with tag `tr` (table rows)
