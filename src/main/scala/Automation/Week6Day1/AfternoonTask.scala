@@ -21,7 +21,7 @@ object AfternoonTask extends App {
 
   //  1. Use ChromeDriver with `--headless=new option`
   val options = new ChromeOptions()
-  options.addArguments("--headless=new")
+  options.addArguments("--headless")
 
   //  2. Navigate to the login URL -https: //the-internet.herokuapp.com/login
   val driver: WebDriver = new ChromeDriver()
@@ -49,12 +49,11 @@ object AfternoonTask extends App {
   println(resultMessage.getText)
 
   //  5. Take a screenshot [Wrap key steps in a utility function that takes a screenshot].
-
-  def takeScreenshot(driver: WebDriver, status: String): Unit = {
+  def takeScreenshot() {
     val timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date())
-    val srcTimestamp: File = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
+    val srcFull: File = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
     //  6. Save as screenshots/YYYY-MM-DD-success-<timestamp>.png or screenshots/YYYY-MMDD-failure-<timestamp>.png
-    FileHandler.copy(srcTimestamp, new File(s"/Users/shani.mcfarlane/Documents/Screenshots/TestResult_$timeStamp-$status.png"))
+    FileHandler.copy(srcFull, new File(s"/Users/shani.mcfarlane/Documents/Screenshots/TestResult_$timeStamp.png"))
     println("Screenshot saved")
   }
 
