@@ -60,13 +60,13 @@ object AfternoonTask extends App {
   //  takeScreenshot(driver, "success")
 
   //  7. Use try / catch / finally: a. catch Selenium exceptions (e.g., NoSuchElementException, TimeoutException)
-  try {
-    takeScreenshot(driver, "success")
-  } catch {
-    case e: Exception =>
-      takeScreenshot(driver, "failure")
-      println("Failed " + e.getMessage)
-  }
+//  try {
+//    takeScreenshot(driver, "success")
+//  } catch {
+//    case e: Exception =>
+//      takeScreenshot(driver, "failure")
+//      println("Failed " + e.getMessage)
+//  }
   //  8. Finally, call driver.quit().
   driver.quit()
 
